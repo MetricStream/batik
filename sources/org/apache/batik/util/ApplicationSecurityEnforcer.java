@@ -155,7 +155,11 @@ public class ApplicationSecurityEnforcer {
      */
     public void enforceSecurity(boolean enforce){
         SecurityManager sm = System.getSecurityManager();
-
+		
+		/**
+		 *  Security Manager check is disabled while exporting chart output into JPEG and PDF.
+		 */
+		/*
         if (sm != null && sm != lastSecurityManagerInstalled) {
             // Throw a Security exception: we do not want to override
             // an 'alien' SecurityManager with either null or 
@@ -163,7 +167,7 @@ public class ApplicationSecurityEnforcer {
             throw new SecurityException
                 (Messages.getString(EXCEPTION_ALIEN_SECURITY_MANAGER));
         }
-        
+        */
         if (enforce) {
             // We first set the security manager to null to
             // force reloading of the policy file in case there
